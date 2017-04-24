@@ -1,0 +1,133 @@
+body{
+	color: #333333;
+	background-color: #FFDEAD;
+}
+h1{
+	clear:left;
+	width:940px;
+}
+h2{
+	clear:left;
+	width:940px;
+	text-align: center;
+}
+.menu-opcoes ul {
+	font-size: 20px;
+}
+.menu-opcoes ul li {
+	display: inline;
+	margin-left: 20px;
+}
+.menu-opcoes {
+	position: relative;
+	bottom: 0;
+	right: 0;
+}
+.container {
+	margin: 0 auto;
+	width: 940px;
+}
+.titulo {
+	text-align: center;
+}
+#NovaCity {
+	display:none;
+	border:double;
+	border-color:#DEB887;
+	padding:2px;
+	position:absolute;
+	background-color: #FFDEAD;
+}
+#btn {
+	float:right;
+	width:5px;
+	width: auto;
+	height: auto;
+}
+.select{
+	display:block;
+	float:left;
+	width: 230px;
+}
+.select2{
+	float:left;
+	width:60px;
+}
+.cidaden{
+	float:left;
+	display:none;
+	border:double;
+	border-color:#DEB887;
+	padding:10px;
+}
+.cidaden img{
+	max-width:50px;
+	width: auto;
+	height: auto;
+}
+#botaosalvar {
+	float:right;
+	width:5px;
+	width: auto;
+	height: auto;
+}
+#cidadenova{
+	float:right;
+	width:5px;
+	width: auto;
+	height: auto;
+}
+#cidades {
+	display:none;
+    white-space: nowrap;
+    width: 100%;
+	overflow-x: scroll;
+	overflow-y: scroll;
+}
+#pesquisas{
+	display:none;
+}
+#calcular{
+	text-align: center;
+	display:none;
+}
+#calcularedificios{
+	display:none;
+	border:solid;
+	border-color:#DEB887;
+	padding:5px;
+}
+#calcularguerra{
+	display:none;
+	border:solid;
+	border-color:#DEB887;
+	padding:5px;
+}
+.edex img{
+	max-width:40px;
+	width: auto;
+	height: auto;
+}
+.pesq{
+	border:solid;
+	border-color:#DEB887;
+	padding:5px;
+	display:inline-block;
+	width:205px;
+}
+.fut{
+	display:none;
+}
+#calcularedificios img{
+	max-width:50px;
+	width: auto;
+	height: auto;
+}
+#calcularguerra img{
+	max-width:50px;
+	width: auto;
+	height: auto;
+}
+#resultado{
+	display:none;
+}
