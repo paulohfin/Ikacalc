@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<div id='NovaCity'>
+		<table>
+			<tr bgcolor='Peru' ><td colspan=6><div id='btn'><input type="image" src="img/excluir.png" alt="Cancelar" onclick="cancelar()"></div></td></tr>
+			<tr><th colpan=2>Nome da Cidade:</th><td colspan=4><input type="text" name="nome" id='nvcity'></td></tr>
+			<tr><th>Edificações:</th><th>Level:</th><th>Edificações:</th><th>Level:</th><th>Edificações:</th><th>Level:</th></tr>
+			<tr><td><select id='ed1' onClick='btnCarregar(this.id)'>
+					<option value=" "></select></td>
+				<td><select id='ed1l' onClick='btnCarregarl(this.id)'>
+					<option value=" "></select></td>
+				<td><select id='ed8' onClick='btnCarregar(this.id)'></text>
+					<option value=" "></select></td>
+				<td><select id='ed8l' onClick='btnCarregarl(this.id)'></text>
+					<option value=" "></select></td>
+				<td><select id='ed14' onClick='btnCarregar(this.id)'></text>
+					<option value=" "></select></td>
+				<td><select id='ed14l' onClick='btnCarregarl(this.id)'></text>
+					<option value=" "></select></td></tr>							
+			<tr><td><select id='ed2' onClick='btnCarregar(this.id)'>
+					<option value=" "></select></td>
+				<td><select id='ed2l' onClick='btnCarregarl(this.id)'>
+					<option value=" "></select></td>
+				<td><select id='ed9' onClick='btnCarregar(this.id)'></text>
+					<option value=" "></select></td>
+				<td><select id='ed9l' onClick='btnCarregarl(this.id)'></text>
+					<option value=" "></select></td>
+				<td><select id='ed15' onClick='btnCarregar(this.id)'></text>
+					<option value=" "></select></td>
+				<td><select id='ed15l' onClick='btnCarregarl(this.id)'></text>
+					<option value=" "></select></td></tr>
+			<tr><td><select id='ed3' onClick='btnCarregar(this.id)'>
+					<option value=" "></select></td>
+				<td><select id='ed3l' onClick='btnCarregarl(this.id)'>
+					<option value=" "></select></td>
+				<td><select id='ed10' onClick='btnCarregar(this.id)'></text>
+					<option value=" "></select></td>
+				<td><select id='ed10l' onClick='btnCarregarl(this.id)'></text>
+					<option value=" "></select></td>
+				<td><select id='ed16' onClick='btnCarregar(this.id)'></text>
+					<option value=" "></select></td>
+				<td><select id='ed16l' onClick='btnCarregarl(this.id)'></text>
+					<option value=" "></select></td></tr>
+			<tr><td><select id='ed4' onClick='btnCarregar(this.id)'>
+					<option value=" "></select></td>
+				<td><select id='ed4l' onClick='btnCarregarl(this.id)'>
+					<option value=" "></select></td>
+				<td><select id='ed11' onClick='btnCarregar(this.id)'></text>
+					<option value=" "></select></td>
+				<td><select id='ed11l' onClick='btnCarregarl(this.id)'></text>
+					<option value=" "></select></td>
+				<td><select id='ed17' onClick='btnCarregar(this.id)'></text>
+					<option value=" "></select></td>
+				<td><select id='ed17l' onClick='btnCarregarl(this.id)'></text>
+					<option value=" "></select></td></tr>
+			<tr><td><select id='ed5' onClick='btnCarregar(this.id)'>
+					<option value=" "></select></td>
+				<td><select id='ed5l' onClick='btnCarregarl(this.id)'>
+					<option value=" "></select></td>
+				<td><select id='ed12' onClick='btnCarregar(this.id)'></text>
+					<option value=" "></select></td>
+				<td><select id='ed12l' onClick='btnCarregarl(this.id)'></text>
+					<option value=" "></select></td>
+				<td><select id='ed18' onClick='btnCarregar(this.id)'></text>
+					<option value=" "></select></td>
+				<td><select id='ed18l' onClick='btnCarregarl(this.id)'></text>
+					<option value=" "></select></td></tr>
+			<tr><td><select id='ed6' onClick='btnCarregar(this.id)'>
+					<option value=" "></select></td>
+				<td><select id='ed6l' onClick='btnCarregarl(this.id)'>
+					<option value=" "></select></td>
+				<td><select id='ed13' onClick='btnCarregar(this.id)'></text>
+					<option value=" "></select></td>
+				<td><select id='ed13l' onClick='btnCarregarl(this.id)'></text>
+					<option value=" "></select></td>
+				<td><select id='ed19' onClick='btnCarregar(this.id)'></text>
+					<option value=" "></select></td>
+				<td><select id='ed19l' onClick='btnCarregarl(this.id)'></text>
+					<option value=" "></select></td></tr>
+			<tr><td><select id='ed7' onClick='btnCarregar(this.id)'>
+					<option value=" "></select></td>
+				<td><select id='ed7l' onClick='btnCarregarl(this.id)'>
+					<option value=" "></select></td></tr>
+			<tr><th colspan=4>Extração de Recursos:</th></tr>
+			<tr><td colspan=2><img src='img/icon_wood.png'></td><td><input type='number' id='rec1' size='1'></td></tr>
+			<tr><td colspan=2><select id='rec2'>
+			<option>Vinho</option>
+			<option>Mármore</option>
+			<option>Cristal</option>
+			<option>Enxofre</option>
+			</select>
+			</td><td><input type='number' id='rec2l' size='1'></td></tr>
+			<tr><th colspan=4>Consumo de Vinho:</th></tr>
+			<tr><td colspan=2><img src='img/icon_wine.png'></td><td><input type='number' id='rec3'size='1'></td></tr>
+			
+		<tr><th colspan=4>Produtos no Armazém:</th></tr>
+		<tr><td colspan=2><img src='img/icon_wood.png'></td><td><input type='number' id='rec4' size='1'></td></tr>
+		<tr><td colspan=2><img src='img/icon_wine.png'></td><td><input type='number' id='rec5' size='1'></td></tr>
+		<tr><td colspan=2><img src='img/icon_marble.png'></td><td><input type='number' id='rec6' size='1'></td></tr>
+		<tr><td colspan=2><img src='img/icon_glass.png'></td><td><input type='number' id='rec7' size='1'></td></tr>
+		<tr><td colspan=2><img src='img/icon_sulfur.png'></td><td><input type='number' id='rec8' size='1'></td></tr>
+		<tr><td colspan=3><input type="image" src="img/ok.png" alt="Adicionar Cidades" onclick="adicionar()"></td><td>
+		<input type="image" src="img/excluir.png" alt="Cancelar" onclick="cancelar()"></td></tr>
+		</table>
+		</div>
+		<script src="js/calculo.js"></script>
+		<script src="js/calculo2.js"></script>
+		<script src='js/calculoDados.js'></script>
+</html>

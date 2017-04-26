@@ -4,11 +4,11 @@ body{
 }
 h1{
 	clear:left;
-	width:940px;
+	width:840px;
 }
 h2{
 	clear:left;
-	width:940px;
+	width:840px;
 	text-align: center;
 }
 .menu-opcoes ul {
@@ -25,17 +25,13 @@ h2{
 }
 .container {
 	margin: 0 auto;
-	width: 940px;
+	width: 840px;
 }
 .titulo {
 	text-align: center;
 }
 #NovaCity {
 	display:none;
-	border:double;
-	border-color:#DEB887;
-	padding:2px;
-	position:absolute;
 	background-color: #FFDEAD;
 }
 #btn {
@@ -93,15 +89,13 @@ h2{
 }
 #calcularedificios{
 	display:none;
-	border:solid;
-	border-color:#DEB887;
-	padding:5px;
+    white-space: nowrap;
+    width: 100%;
+	overflow-x: scroll;
+	overflow-y: hidden;
 }
 #calcularguerra{
 	display:none;
-	border:solid;
-	border-color:#DEB887;
-	padding:5px;
 }
 .edex img{
 	max-width:40px;

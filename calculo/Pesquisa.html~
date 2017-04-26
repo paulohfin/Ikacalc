@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<div id="pesquisas">
+	<table border=1>
+		<tr><th>Navegação Martítma</th><th>Economia</th><th>Ciência</th><th>Militar</th></tr>
+		<tr><td><text id='pesqn'></text></td><td><text id='pesqe'></text></td><td><text id='pesqc'></text></td><td><text id='pesqm'></text></td></tr>
+		<tr><td><select id='pnm'>
+			<option value=''></option></select></td>
+		<td><select id='pec'>
+			<option value=''></option></select></td>
+		<td><select id='pci'>
+			<option value=''></option></select></td>
+		<td><select id='pmi'>
+			<option value=''></option></select></td></tr>
+	</table>
+	
+	</div> <!--pesquisas-->
+	<script src="js/calculo.js"></script>
+	<script src='js/calculoDados.js'></script>
+</html>

@@ -1,0 +1,7 @@
+
+/*
+	função que esconde div com o id 'NovaCity'
+*/
+function cancelar() {
+	document.getElementById('NovaCity').style.display="none";
+}

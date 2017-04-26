@@ -29,8 +29,8 @@ function mostrar2(id) {
 		document.getElementById('pmf').style.display = "block";
 }
 /*
-	função que esconde div com o id 'NovaCity'
+	função exibe mensagem
 */
-function cancelar() {
-	document.getElementById('NovaCity').style.display="none";
+function naoimplementado(){
+	alert('função não implementada');
 }
