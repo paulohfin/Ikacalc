@@ -1,0 +1,156 @@
+body{
+	color: #333333;
+	background-color: #FFDEAD;
+}
+h1{
+	clear:left;
+	width:840px;
+}
+h2{
+	clear:left;
+	width:840px;
+	text-align: center;
+}
+.menu-opcoes ul {
+	font-size: 20px;
+}
+.menu-opcoes ul li {
+	display: inline;
+	margin-left: 20px;
+}
+.menu-opcoes {
+	position:absolute;
+	top:150px;
+	left:50%;
+}
+.img01{
+	position: absolute;
+	left:50%;
+	top:20px;
+	width:600px;
+	margin-left:-300px;
+}
+.inserirsalvar{
+	position: absolute;
+	left:50%;
+	top:320px;
+	width:600px;
+	margin-left:-300px;
+}
+.img3{
+	position: absolute;
+	left:50%;
+	top:220px;
+	width:720px;
+	margin-left:-360px;
+}
+.img51{
+	position: absolute;
+	left:50%;
+	top:313px;
+	width:692.6px;
+	margin-left:-349.8px;
+}
+.img52{
+	position: absolute;
+	left:50%;
+	top:390px;
+	width:692.6px;
+	margin-left:-349.8px;
+}
+.img53{
+	position: absolute;
+	left:50%;
+	top:467px;
+	width:692.6px;
+	margin-left:-349.8px;
+}
+.img54{
+	position: absolute;
+	left:50%;
+	top:544px;
+	width:692.6px;
+	margin-left:-349.8px;
+}
+.img55{
+	position: absolute;
+	left:50%;
+	top:621px;
+	width:692.6px;
+	margin-left:-349.8px;
+}
+.img7{
+	position: absolute;
+	left:50%;
+	top:310px;
+	width:640px;
+	height:400px;
+	margin-left:-323px;
+}
+.img4{
+	position: absolute;
+	left:50%;
+	top:696px;
+	width:724px;
+	margin-left:-364px;
+}
+.botoes{
+	position:relative;
+	left:50%;
+	width: 600px;
+	height:105px;
+	margin-left:-200px;
+}
+.botoesbtns{
+	position:absolute;
+	width:105px;
+}
+.botoestext{
+	position:absolute;
+	left:110px;
+	width:450px;
+}
+.btns{
+	width:100px;
+	height:100px;
+}
+.nbotoes{
+	position:absolute;
+	left:50%;
+	top:390px;
+	width:400px;
+	height:120px;
+	margin-left:-300px;
+}
+#botaosalvar {
+	float:right;
+	width:5px;
+	width: auto;
+	height: auto;
+}
+#calcularguerra{
+	display:none;
+}
+.edex img{
+	max-width:40px;
+	width: auto;
+	height: auto;
+}
+.pesq{
+	border:solid;
+	border-color:#DEB887;
+	padding:5px;
+	display:inline-block;
+	width:205px;
+}
+.fut{
+	display:none;
+}
+#calcularguerra img{
+	max-width:50px;
+	width: auto;
+	height: auto;
+}
+#resultado{
+	display:none;
+}

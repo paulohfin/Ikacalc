@@ -1,0 +1,32 @@
+#pesquisa{
+	display:none;
+	position:absolute;
+	left:50%;
+	top:320px;
+    width: 620px;
+    height: 600px;
+	margin-left:-310px;
+}
+.imgb7{
+	position: absolute;
+	left:50%;
+	top:-10px;
+	width:640px;
+	height:400px;
+	margin-left:-323px;
+}
+#fecharp{
+	position:absolute;
+	top:-70px;
+	right:50%;
+	margin-right:-320px;
+}
+#salvarp{
+	position:absolute;
+	top:-70px;
+	left:50%;
+	margin-left:-320px;
+}
+.textop{
+	position:absolute;
+}

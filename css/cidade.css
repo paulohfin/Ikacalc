@@ -1,0 +1,130 @@
+#cidade{
+	display:none;
+}
+.imga3{
+	position: absolute;
+	left:50%;
+	top:220px;
+	width:720px;
+	margin-left:-360px;
+}
+.imga51{
+	position: absolute;
+	left:50%;
+	top:313px;
+	width:692.6px;
+	margin-left:-349.8px;
+}
+.imga52{
+	position: absolute;
+	left:50%;
+	top:390px;
+	width:692.6px;
+	margin-left:-349.8px;
+}
+.imga53{
+	position: absolute;
+	left:50%;
+	top:467px;
+	width:692.6px;
+	margin-left:-349.8px;
+}
+.imga54{
+	position: absolute;
+	left:50%;
+	top:544px;
+	width:692.6px;
+	margin-left:-349.8px;
+}
+.imga55{
+	position: absolute;
+	left:50%;
+	top:621px;
+	width:692.6px;
+	margin-left:-349.8px;
+}
+.imga56{
+	position: absolute;
+	left:50%;
+	top:698px;
+	width:692.6px;
+	margin-left:-349.8px;
+}
+.imga57{
+	position: absolute;
+	left:50%;
+	top:775px;
+	width:692.6px;
+	margin-left:-349.8px;
+}
+.imga58{
+	position: absolute;
+	left:50%;
+	top:842px;
+	width:692.6px;
+	margin-left:-349.8px;
+}
+.imga7{
+	position: absolute;
+	left:50%;
+	top:310px;
+	width:640px;
+	height:620px;
+	margin-left:-323px;
+}
+.imga4{
+	position: absolute;
+	left:50%;
+	top:919px;
+	width:724px;
+	margin-left:-364px;
+}
+#btcidadenova{
+	position:absolute;
+	top:250px;
+	left:50%;
+	margin-left:-320px;
+}
+#fechar{
+	position:absolute;
+	top:250px;
+	right:50%;
+	margin-right:-320px;
+}
+.mostrarcity{
+	position:absolute;
+    white-space: nowrap;
+	left:50%;
+	top:320px;
+    width: 620px;
+    height: 600px;
+	margin-left:-310px;
+	overflow-x: scroll;
+	overflow-y: scroll;	
+}
+#nvcidade {
+	display:none;
+	position:absolute;
+	top:0px;
+	left:0px;
+	height:1000px;
+	background-color: #FFDEAD;
+}
+#btncancelar {
+	float:right;
+	width:5px;
+	width: auto;
+	height: auto;
+}
+.cidaden{
+	float:left;
+	display:none;
+	border:double;
+	border-color:#DEB887;
+	padding:10px;
+}
+.cidaden img{
+	max-width:50px;
+	width: auto;
+	height: auto;
+}
