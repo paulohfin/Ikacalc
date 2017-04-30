@@ -3,13 +3,12 @@
 	função de mostrar div de cadastro de nova cidade se há menos do que 12 cidades
 */
 function nova() {
-	if(Cidade.length < 12)
+	if(player.QtdCity() < 12)
 		document.getElementById('nvcidade').style.display="block";
 	else{
 		alert('Número Máximo de Cidades Alcançado');
 		return false;
 	}
-	idx = 0;
 }
 /*
 	função que esconde div com o id 'nvcidade'
@@ -35,40 +34,39 @@ function btnCarregar(id){
 		edt = 'ed'.concat( i.toString());
 		temp.push(document.getElementById(edt).options[document.getElementById(edt).selectedIndex].text);
 	}
-	
 	//contando edifícios que não sao porto, estaleiro, muralha ou pirata		
-	for(j = ed.length - 1; j >= 0; j--)
+	for(j = Recurso.length - 1; j >= 0; j--)
 		for(i = 0; i < temp.length; i++)
-			if(temp[i] == ed[23] || temp[i] == ed[10] || temp[i] == ed[17] || temp[i] == ed[13])
+			if(temp[i] == Recurso[23][0] || temp[i] == Recurso[10][0] || temp[i] == Recurso[17][0] || temp[i] == Recurso[13][0])
 				continue;
-			else if(ed[j] == temp[i] && cont < 16) cont++;
+			else if(Recurso[j][0] == temp[i] && cont < 16) cont++;
 			
 	//Adicionando edifícios em temp2
-	for(j = ed.length - 1; j >= 0; j--){
+	for(j = Recurso.length - 1; j >= 0; j--){
 		a = n = p = 0;
 		for(i = 0; i < temp.length; i++){
 			// Armazem pode ser construído 4 por cidade
-			if(temp[i] == ed[2] && j == 2)
+			if(temp[i] == Recurso[2][0] && j == 2)
 				if(a < 3) a++;
 				else n = 1;
 			// porto/estaleiro podem ser construído 2
-			else if((temp[i] == ed[23] || temp[i] == ed[10]) && (j == 23 && j == 10))
+			else if((temp[i] == Recurso[23][0] || temp[i] == Recurso[10][0]) && (j == 23 && j == 10))
 				if(p < 1) p++;
 				else
 					n = 1;
 			// palácio ou residência do governador
-			else if((temp[i] == ed[21] || temp[i] == ed[25]) && (j == 21 || j == 25))
+			else if((temp[i] == Recurso[21][0] || temp[i] == Recurso[25][0]) && (j == 21 || j == 25))
 				n = 1;
 			// se já estiver construído, não aparecer na lista
-			else if(ed[j] == temp[i])
+			else if(Recurso[j][0] == temp[i])
 				n = 1;
 		}
 		if(n == 0)
 			//se tiver 15 edifícios construídos, não colocar nas opções de novos edifícios
 			if(cont < 15)
-				temp2.push(ed[j]);
+				temp2.push(Recurso[j][0]);
 			else if(j == 23 || j == 10 || j == 17 || j == 13)
-				temp2.push(ed[j]);
+				temp2.push(Recurso[j][0]);
 	}
 
 	//alimentando selector
@@ -88,84 +86,84 @@ function btnCarregar(id){
 	}
 }
 /*
-	função recebe número, select e nome de edifício
+	função recebe número(level), select e nome de edifício
 	alimenta select com os leveis possíveis de evolução
 */
 function btnCarregarl2(lv, el, name){
 	if(el.length > 1) return;
 	var i, n;
 	//Definindo level maximo
-	if(name == ed[21] || name == ed[25])
+	if(name == Recurso[21][0] || name == Recurso[25][0])
 		for(i = lv; i < 11; i++){
 			var option = document.createElement('option');
 			option.value = (i - lv).toString();
 			option.text = (i + 1).toString();
 			el.add(option);
 		}
-	else if(name == ed[18])
+	else if(name == Recurso[18][0])
 		for(i = lv; i < 21; i++){
 			var option = document.createElement('option');
 			option.value = (i - lv).toString();
 			option.text = (i + 1).toString();
 			el.add(option);
 		}
-	else if(name == ed[15])
+	else if(name == Recurso[15][0])
 		for(i = lv; i < 25; i++){
 			var option = document.createElement('option');
 			option.value = (i - lv).toString();
 			option.text = (i + 1).toString();
 			el.add(option);
 		}
-	else if(name == ed[13])
+	else if(name == Recurso[13][0])
 		for(i = lv; i < 30; i++){
 			var option = document.createElement('option');
 			option.value = (i - lv).toString();
 			option.text = (i + 1).toString();
 			el.add(option);
 		}
-	else if(name == ed[1] || name == ed[8] || name == ed[20] || name == ed[9] || name == ed[14] || name == ed[12] || name == ed[28] || name == ed[29] || name == ed[22] || name == ed[5] || name == ed[19] || name == ed[11] || name == ed[6] || name == ed[4])
+	else if(name == Recurso[1][0] || name == Recurso[8][0] || name == Recurso[20][0] || name == Recurso[9][0] || name == Recurso[14][0] || name == Recurso[12][0] || name == Recurso[28][0] || name == Recurso[29][0] || name == Recurso[22][0] || name == Recurso[5][0] || name == Recurso[19][0] || name == Recurso[11][0] || name == Recurso[6][0] || name == Recurso[4][0])
 		for(i = lv; i < 32; i++){
 			var option = document.createElement('option');
 			option.value = (i - lv).toString();
 			option.text = (i + 1).toString();
 			el.add(option);
 		}
-	else if(name == ed[10] || name == ed[27])
+	else if(name == Recurso[10][0] || name == Recurso[27][0])
 		for(i = lv; i < 38; i++){
 			var option = document.createElement('option');
 			option.value = (i - lv).toString();
 			option.text = (i + 1).toString();
 			el.add(option);
 		}
-	else if(name == ed[16])
+	else if(name == Recurso[16][0])
 			for(i = lv; i < 39; i++){
 				var option = document.createElement('option');
 				option.value = (i - lv).toString();
 				option.text = (i + 1).toString();
 				el.add(option);
 			}
-	else if(name == ed[0] || name == ed[2] || name == ed[7] || name == ed[3])
+	else if(name == Recurso[0][0] || name == Recurso[2][0] || name == Recurso[7][0] || name == Recurso[3][0])
 		for(i = lv; i < 40; i++){
 			var option = document.createElement('option');
 			option.value = (i - lv).toString();
 			option.text = (i + 1).toString();
 			el.add(option);
 		}
-	else if(name == ed[26] || name == ed[23])
+	else if(name == Recurso[26][0] || name == Recurso[23][0])
 		for(i = lv; i < 47; i++){
 			var option = document.createElement('option');
 			option.value = (i - lv).toString();
 			option.text = (i + 1).toString();
 			el.add(option);
 		}
-	else if(name == ed[17])
+	else if(name == Recurso[17][0])
 		for(i = lv; i < 48; i++){
 			var option = document.createElement('option');
 			option.value = (i - lv).toString();
 			option.text = (i + 1).toString();
 			el.add(option);
 		}
-	else if(name == ed[24])
+	else if(name == Recurso[24][0])
 		for(i = lv; i < 49; i++){
 			var option = document.createElement('option');
 			option.value = (i - lv).toString();
@@ -194,29 +192,36 @@ function btnCarregarl(id){
 	função recebe o indice n(1 a 12) e o vetor de construções/level
 	atualiza html
 */
-function NVCity(n, nvcity){
-	var i;
-	//nomeando nova cidade
-	document.getElementById('nome'.concat(n.toString())).innerHTML = nvcity[0];
-	
-	//tornando nova cidade visível
-	document.getElementById('city'.concat(n.toString())).style.display = "block";
-	
-	//alimentando edifícios da nova cidade
-	for(i = 1; i < 20; i++){
-		document.getElementById('c'.concat(n.toString(), 'ed', i.toString())).src = url[parseInt(nvcity[2 * i - 1])];
-		document.getElementById('c'.concat(n.toString(), 'ed', i.toString(), 'l')).innerHTML = nvcity[2 * i ].toString();
+function Atualizar(){
+	var i, j;
+	for(i = 0; i < player.QtdCity(); i++){
+		var arr = player.getCity(i);
+		document.getElementById('nome'.concat((i + 1).toString())).innerHTML = arr[0];
+		document.getElementById('city'.concat((i + 1).toString())).style.display = "block";
+		for(j = 0; j < arr[1].length; j++){
+			var ed = arr[1][j];
+			document.getElementById('c'.concat((i + 1).toString(), 'ed', (j + 1).toString())).src = Recurso[ed[0]][1];
+			document.getElementById('c'.concat((i + 1).toString(), 'ed', (j + 1).toString(), 'l')).innerHTML = ed[1].toString();
+		}
+		for(;j < 19; j++){
+			document.getElementById('c'.concat((i + 1).toString(), 'ed', (j + 1).toString())).src = Recurso[30];
+			document.getElementById('c'.concat((i + 1).toString(), 'ed', (j + 1).toString(), 'l')).innerHTML = '-';		
+		}
+		var rec = arr[2];
+		document.getElementById('c'.concat((i + 1).toString(), 'r1l')).innerHTML = rec[0].toString();
+		document.getElementById('c'.concat((i + 1).toString(), 'r2')).src = url[rec[1]];
+		document.getElementById('c'.concat((i + 1).toString(), 'r2l')).innerHTML = rec[2].toString();	
+		document.getElementById('c'.concat((i + 1).toString(), 'r3l')).innerHTML = rec[3].toString();
+		document.getElementById('c'.concat((i + 1).toString(), 'r4')).innerHTML = rec[4].toString();	
+		document.getElementById('c'.concat((i + 1).toString(), 'r5')).innerHTML = rec[5].toString();
+		document.getElementById('c'.concat((i + 1).toString(), 'r6')).innerHTML = rec[6].toString();	
+		document.getElementById('c'.concat((i + 1).toString(), 'r7')).innerHTML = rec[7].toString();
+		document.getElementById('c'.concat((i + 1).toString(), 'r8')).innerHTML = rec[8].toString();	
 	}
-	
-	document.getElementById('c'.concat(n.toString(), 'r1l')).innerHTML = nvcity[39].toString();
-	document.getElementById('c'.concat(n.toString(), 'r2')).src = url[nvcity[40]];
-	document.getElementById('c'.concat(n.toString(), 'r2l')).innerHTML = nvcity[41].toString();	
-	document.getElementById('c'.concat(n.toString(), 'r3l')).innerHTML = nvcity[42].toString();
-	document.getElementById('c'.concat(n.toString(), 'r4')).innerHTML = nvcity[43].toString();	
-	document.getElementById('c'.concat(n.toString(), 'r5')).innerHTML = nvcity[44].toString();
-	document.getElementById('c'.concat(n.toString(), 'r6')).innerHTML = nvcity[45].toString();	
-	document.getElementById('c'.concat(n.toString(), 'r7')).innerHTML = nvcity[46].toString();
-	document.getElementById('c'.concat(n.toString(), 'r8')).innerHTML = nvcity[47].toString();	
+	for(; i < 12; i++){
+		document.getElementById('nome'.concat((i + 1).toString())).innerHTML = '';
+		document.getElementById('city'.concat((i + 1).toString())).style.display = "none";
+	}
 }
 /*
 	função adiciona nova cidade
@@ -236,36 +241,36 @@ function adicionar(){
 		if(document.getElementById('ed'.concat(i.toString())).options[document.getElementById('ed'.concat(i.toString())).selectedIndex].text == null) nvcity.push(null, null)
 		else{	
 			switch(document.getElementById('ed'.concat(i.toString())).options[document.getElementById('ed'.concat(i.toString())).selectedIndex].text){
-				case ed[0]: n = 0; break;
-				case ed[1]: n = 1; break;
-				case ed[2]: n = 2; break;
-				case ed[3]: n = 3; break;
-				case ed[4]: n = 4; break;
-				case ed[5]: n = 5; break;
-				case ed[6]: n = 6; break;
-				case ed[7]: n = 7; break;
-				case ed[8]: n = 8; break;
-				case ed[9]: n = 9; break;
-				case ed[10]: n = 10; break;
-				case ed[11]: n = 11; break;
-				case ed[12]: n = 12; break;
-				case ed[13]: n = 13; break;
-				case ed[14]: n = 14; break;
-				case ed[15]: n = 15; break;
-				case ed[16]: n = 16; break;
-				case ed[17]: n = 17; break;
-				case ed[18]: n = 18; break;
-				case ed[19]: n = 19; break;
-				case ed[20]: n = 20; break;
-				case ed[21]: n = 21; break;
-				case ed[22]: n = 22; break;
-				case ed[23]: n = 23; break;
-				case ed[24]: n = 24; break;
-				case ed[25]: n = 25; break;
-				case ed[26]: n = 26; break;
-				case ed[27]: n = 27; break;
-				case ed[28]: n = 28; break;
-				case ed[29]: n = 29; break;
+				case Recurso[0][0]: n = 0; break;
+				case Recurso[1][0]: n = 1; break;
+				case Recurso[2][0]: n = 2; break;
+				case Recurso[3][0]: n = 3; break;
+				case Recurso[4][0]: n = 4; break;
+				case Recurso[5][0]: n = 5; break;
+				case Recurso[6][0]: n = 6; break;
+				case Recurso[7][0]: n = 7; break;
+				case Recurso[8][0]: n = 8; break;
+				case Recurso[9][0]: n = 9; break;
+				case Recurso[10][0]: n = 10; break;
+				case Recurso[11][0]: n = 11; break;
+				case Recurso[12][0]: n = 12; break;
+				case Recurso[13][0]: n = 13; break;
+				case Recurso[14][0]: n = 14; break;
+				case Recurso[15][0]: n = 15; break;
+				case Recurso[16][0]: n = 16; break;
+				case Recurso[17][0]: n = 17; break;
+				case Recurso[18][0]: n = 18; break;
+				case Recurso[19][0]: n = 19; break;
+				case Recurso[20][0]: n = 20; break;
+				case Recurso[21][0]: n = 21; break;
+				case Recurso[22][0]: n = 22; break;
+				case Recurso[23][0]: n = 23; break;
+				case Recurso[24][0]: n = 24; break;
+				case Recurso[25][0]: n = 25; break;
+				case Recurso[26][0]: n = 26; break;
+				case Recurso[27][0]: n = 27; break;
+				case Recurso[28][0]: n = 28; break;
+				case Recurso[29][0]: n = 29; break;
 				default:
 					n = 30;
 			}
@@ -275,48 +280,34 @@ function adicionar(){
 	nvcity.push(document.getElementById('rec1').value);
 	switch(document.getElementById('rec2').options[document.getElementById('rec2').selectedIndex].value){
 		case 'Vinho':
-			nvcity.push(31);	
+			nvcity.push(0);	
 			break;
 		case 'Mármore':
-			nvcity.push(32);	
+			nvcity.push(1);	
 			break;
 		case 'Cristal':
-			nvcity.push(33);	
+			nvcity.push(2);	
 			break;
 		case 'Enxofre':
-			nvcity.push(34);
+			nvcity.push(3);
 			break;
 	}
-	nvcity.push(document.getElementById('rec2l').value);
-	
-	//adicionando consumo de vinho
+	nvcity.push(document.getElementById('rec2l').value);	
 	nvcity.push(document.getElementById('rec3').value);
-	
-	//produtos no armazem
 	nvcity.push(document.getElementById('rec4').value);
 	nvcity.push(document.getElementById('rec5').value);
 	nvcity.push(document.getElementById('rec6').value);
 	nvcity.push(document.getElementById('rec7').value);
 	nvcity.push(document.getElementById('rec8').value);
 	
-	
-	//verificando se nova cidade tem camara municipal
 	for(i = 1; i < nvcity.length; i += 2)
 		if(nvcity[i] == 0) break;
 		else if(i > 36){
 			alert('Necessita de uma Câmara Municipal');
 			return;
 		}
-	if(idx == 0)
-		n = Cidade.length + 1;
-	else n = idx;
-	
-	//armazenando nova cidade
-	if(idx == 0)
-		Cidade.push(nvcity);
-	document.getElementById('nvcidade').style.display="none";
-	//atualizando html
-	NVCity(n, nvcity);
+	player.addCity(nvcity);
+	Atualizar();
 }
 /*
 	função recebe um id da cidade a ser excluída
@@ -325,28 +316,33 @@ function excluir(id){
 	var decisao = confirm("Tem certeza que quer excluir esta Cidade?");
 	var i, j;
 	if(decisao == true){
-		//removendo dados da cidade
-		Cidade.splice(id - 1, 1);
-		
-		//atualizando dados da city
-		for(i = 0; i < Cidade.length ; i++){
-			document.getElementById('nome'.concat((i + 1).toString())).innerHTML = Cidade[i][0];
-			for(j = 1; j < 20; j++){
-				document.getElementById('c'.concat((i + 1).toString(), 'ed', j.toString())).src = url[Cidade[i][2 * j - 1]];
-				document.getElementById('c'.concat((i + 1).toString(), 'ed', j.toString(), 'l')).innerHTML = Cidade[i][2 * j];
-			}
-			document.getElementById('c'.concat((i + 1).toString(), 'r1l')).innerHTML = Cidade[i][39];
-			document.getElementById('c'.concat((i + 1).toString(), 'r2')).src = url[Cidade[i][40]];
-			document.getElementById('c'.concat((i + 1).toString(), 'r2l')).innerHTML = Cidade[i][ 41];
-			document.getElementById('c'.concat((i + 1).toString(), 'r3l')).innerHTML = Cidade[i][42];
-			document.getElementById('c'.concat((i + 1).toString(), 'r4')).innerHTML = Cidade[i][43];
-			document.getElementById('c'.concat((i + 1).toString(), 'r5')).innerHTML = Cidade[i][44];
-			document.getElementById('c'.concat((i + 1).toString(), 'r6')).innerHTML = Cidade[i][45];
-			document.getElementById('c'.concat((i + 1).toString(), 'r7')).innerHTML = Cidade[i][46];
-			document.getElementById('c'.concat((i + 1).toString(), 'r8')).innerHTML = Cidade[i][47];
-		}		
+		player.removeCity(id - 1);
+		document.getElementById('city'.concat((Cidade.length + 1).toString())).style.display="none";
+		Atualizar();
 	}
-	for(; i < 12; i++)
-			document.getElementById('nome'.concat((i + 1).toString())).innerHTML = '';
-	document.getElementById('city'.concat((Cidade.length + 1).toString())).style.display="none";
+}
+function editar(id){/*
+	document.getElementById('NovaCity').style.display="block";
+	var arr = player.getCity(id - 1);
+	document.getElementById('nvcity').value = arr[0];
+	
+	var i, n;
+	for(i = 1; i < 20; i++){
+		document.getElementById('ed'.concat(i.toString())).value = ed[City[id][ 2 * i + 1]];
+		document.getElementById('ed'.concat(i.toString(), 'l')).text = City[id][2 * (i + 1)];
+	}
+	//adicionando produção
+	document.getElementById('rec1').value = City[id][39];
+	document.getElementById('rec2').value = City[id][40];
+	document.getElementById('rec2l').value = City[id][41];
+	
+	//adicionando consumo de vinho
+	document.getElementById('rec3').value = City[id][42];
+	
+	//produtos no armazem
+	document.getElementById('rec4').value = City[id][43];
+	document.getElementById('rec5').value = City[id][44];
+	document.getElementById('rec6').value = City[id][45];
+	document.getElementById('rec7').value = City[id][46];
+	document.getElementById('rec8').value = City[id][47];*/
 }

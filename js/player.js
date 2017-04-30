@@ -1,108 +1,80 @@
-function Edificio(){
-	var nome, level, url;
-	this.getNome = getNome;
-	this.getLevel = getLevel;
-	this.getUrl = getUrl;
-	this.setNome = setNome;
-	this.setLevel = setLevel;
-	this.setUrl = setUrl;
-	this.nvEdificio = nvEdificio;
-	function getNome(){ return nome;}
-	function setNome(_nome){ nome = _nome;}
-	function getLevel(){ return level;}
-	function setLevel(_level){ level = _level;}
-	function getUrl(){ return url;}
-	function setUrl(_url){ url = _url;}
-	function nvEdificio(_nome, _level){
-		nome = _nome;
-		level = _level;
-	}
-}
-function City(nome){
-	var nome;
-	var edificio = [];
-	
-	this.getNome = getNome;
-	this.setNome = setNome;
-	this.addEdificio = addEdificio;
-	this.tamanho = tamanho;
-	
-	function getNome(){ return nome;}
-	function setNome(_nome){ nome = _nome;}
-	function addEdificio(ed){edificio.push(ed);}
-	function tamanho(){return edificio.length;}
-}
-function Recursos(){
-	var pmc, pv, pm, pc, pe, cv, dmc, dv, dm, dc, de;
-	this.getPmc = getPmc;
-	this.getPv = getPv;
-	this.getPm = getPm;
-	this.getPc = getPc;
-	this.getPe = getPe;
-	this.getCv = getCv;
-	this.getDmc = getDmc;
-	this.getDv = getDv;
-	this.getDm = getDm;
-	this.getDc = getDc;
-	this.getDe = getDe;
-	this.setPmc = setPmc;
-	this.setPv = setPv;
-	this.setPm = setPm;
-	this.setPc = setPc;
-	this.setPe = setPe;
-	this.setCv = setCv;
-	this.setDmc = setDmc;
-	this.setDv = setDv;
-	this.setDm = setDm;
-	this.setDc = setDc;
-	this.setDe = setDe;
-	function getPmc(){ return pmc;}
-	function getPv(){ return pv;}
-	function getPm(){ return pm;}
-	function getPc(){ return pc;}
-	function getPe(){ return pe;}
-	function getCv(){ return cv;}
-	function getDmc(){ return dmc;}
-	function getDv(){ return dv;}
-	function getDm(){ return dm;}
-	function getDc(){ return dc;}
-	function getDe(){ return de;}
-	function setPmc(_pmc){ pmc = _pmc;}
-	function setPv(_pv){ pv = _pv;}
-	function setPm(_pm){pm  = _pm;}
-	function setPc(_pc){pc  = _pc;}
-	function setPe(_pe){  pe = _pe;}
-	function setCv(_cv){ cv =  _cv;}
-	function setDmc(_dmc){ dmc =  _dmc;}
-	function setDv(_dv){ dv =  _dv;}
-	function setDm(_dm){ dm = _dm;}
-	function setDe(_de){ de = _de;}
-	function setDc(_dc){ dc = _dc;}
-}
 function Player(){
 	var city = [];
-	var pesquisa = [];
-	var recursos = new Recursos();
+	var pesquisa = ['', '', '', ''];
+	var governo;
 	
-	this.addCity = addCity;
-	this.addPesquisa = addPesquisa;
-	this.QtdCity = QtdCity;
-	this.QtdEd = QtdEd;
-	
-	function addCity(_nv){city.push(_nv);}
-	function addPesquisa(p){pesquisa.push(p);}
-	function QtdCity(){return city.length;}
-	function QtdEd(_i){return city[_i].tamanho();}
+	this.getCity = function(id){
+		return city[id];
+	}
+	this.getCitytxt = function(id){
+		var txt = city[id][0] + ',\n';
+		var i, arr = city[id][1];
+		for(i = 0; i < 19; i++){
+			if(i > 0 && i % 14 == 0)
+				txt += '\n';
+			if(i < arr.length)
+				txt += arr[i] + ',';
+			else txt += ',,';
+		}
+		txt += city[id][2];
+		return txt;
+	}
+	this.addCity = function(_nv){
+		var cidade = [],  i, edificio = [], recurso = [];
+		cidade.push(_nv[0]);
+		for(i = 1; i < 39; i += 2)
+			if(_nv[i] != 30){
+				var ed = [];
+				ed.push(_nv[i])
+				ed.push(_nv[i + 1]);
+				edificio.push(ed);
+			}
+		cidade.push(edificio);
+		recurso.push(_nv[39]);
+		recurso.push(_nv[40]);
+		recurso.push(_nv[41]);
+		recurso.push(_nv[42]);
+		recurso.push(_nv[43]);
+		recurso.push(_nv[44]);
+		recurso.push(_nv[45]);
+		recurso.push(_nv[46]);
+		recurso.push(_nv[47]);
+		cidade.push(recurso);
+		city.push(cidade);
+	}
+	this.editCity =  function(id, _city){
+		city[id] = _city;
+	}
+	this.setPesquisa = function(p1, p2, p3, p4){
+		pesquisa = [];
+		pesquisa.push(p1);
+		pesquisa.push(p2);
+		pesquisa.push(p3);
+		pesquisa.push(p4);
+	}
+	this.getPesquisa = function(){ return pesquisa;}
+	this.QtdCity = function(_nv){
+		return city.length;
+	}
+	this.setGoverno = function(_nv){
+		governo = _nv;
+	}
+	this.getGoverno = function(){ return governo;}
+	this.removeCity = function(id){
+		city.splice(id, 1);
+	}
+	this.getNome = function(id){ return city[id][0];}
 }
-
 var player = new Player();
 
 function exibe(){
 	var i, txt = '', j;
-	for(i = 0; i < player.QtdCity(); i++){
-		for(j = 0; j < player.QtdEd(i); j++)
-		txt += player.city[i].edificio[j].getNome() + ' ' +  player.city[i].edificio[j].getLevel() + ' '; 
-		txt += '\n';
+	if(player.QtdCity() > 0){
+		for(i = 0; i < player.QtdCity(); i++){
+			txt += player.getCitytxt(i)+ '\n';
+		}
+		txt += player.getPesquisa() + '\n' + player.getGoverno();
+		alert(txt);
 	}
-	alert(txt);
+	else alert('Não há dados para mostrar');
 }

@@ -1,4 +1,7 @@
-
+function salvarp(){
+	player.setPesquisa(document.getElementById('pnm').options[document.getElementById('pnm').selectedIndex].text,  document.getElementById('pec').options[document.getElementById('pec').selectedIndex].text,  document.getElementById('pci').options[document.getElementById('pci').selectedIndex].text,  document.getElementById('pmi').options[document.getElementById('pmi').selectedIndex].text);
+	document.getElementById('pesquisa').style.display = "none";
+}
 function carregarPesquisa(id){
 	var i;
 	if(id == 'pnm'){
@@ -18,7 +21,7 @@ function carregarPesquisa(id){
 			var option = document.createElement('option');
 			option.value = i.toString();
 			option.text = TPesquisa[1][i];
-			el.add(option);		
+			el.add(option);
 		}
 	}
 	else if(id == 'pci'){
@@ -41,11 +44,4 @@ function carregarPesquisa(id){
 			el.add(option);		
 		}
 	}
-}
-/*
-
-*/
-function atualizarp(){
-	if(Pesquisa.length == 0)
-		
 }

@@ -1,6 +1,3 @@
-#cidade{
-	display:none;
-}
 .imga3{
 	position: absolute;
 	left:50%;
@@ -81,15 +78,15 @@
 }
 #btcidadenova{
 	position:absolute;
-	top:250px;
+	top:-50px;
 	left:50%;
-	margin-left:-320px;
+	margin-left:-400px;
 }
 #fechar{
 	position:absolute;
-	top:250px;
+	top:-50px;
 	right:50%;
-	margin-right:-320px;
+	margin-right:-400px;
 }
 .mostrarcity{
 	position:absolute;
@@ -105,13 +102,34 @@
 #nvcidade {
 	display:none;
 	position:absolute;
+	left:50%;
 	top:0px;
-	left:0px;
-	height:1000px;
-	background-color: #FFDEAD;
+	width:800px;
+	margin-left:-400px;
+}
+#cidade{
+	display:none;
+	position:absolute;
+	left:50%;
+	top:220px;
+	width:800px;
+	height:700px;
+	margin-left:-400px;
+}
+#ncidade {
+	position:absolute;
+	left:50%;
+	width:790px;
+	margin-left:-395px;
+	height:800px;
+	overflow-x: scroll;
+	overflow-y: scroll;
+	background: "img/f7.jpg";
 }
 #btncancelar {
-	float:right;
+	position:absolute;
+	top:-50px;
+	right:0px;
 	width:5px;
 	width: auto;
 	height: auto;
@@ -127,4 +145,29 @@
 	max-width:50px;
 	width: auto;
 	height: auto;
+}
+#barranv{
+	width:800px;
+}
+#espaconv{
+	position:absolute;
+	top:25px;
+	left:0px;
+	width:800px;
+	height:1000px;
+}
+#barrav{
+	width:800px;
+}
+#espacov{
+	position:absolute;
+	top:25px;
+	left:0px;
+	width:800px;
+	height:810px;
+}
+#nvdados{
+	position:absolute;
+	top:40px;
+	left:50px;
 }

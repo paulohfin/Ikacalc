@@ -28,6 +28,7 @@
 				<div id='botaoabrir'>
 					<input type='file' id='fileopen'>
 					<input type="image" src="img/abrir.png" alt="Abrir" onclick="abrir('fileopen')">
+					<button onclick='exibe()' style='float:right';>TXT</button>
 				</div>
 		</div>
 		<div class='nbotoes'>
@@ -40,15 +41,14 @@
 		<div w3-include-html='html/cidade.html'></div>
 		<div w3-include-html='html/pesquisa.html'></div>
 		<div w3-include-html='html/calcular.html'></div>
-		
-		<button onclick='exibe()'>player</button>
-		
+				
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
 		<script src="js/calculo.js"></script>
 		<script src="js/cidade.js"></script>
 		<script src="js/pesquisa.js"></script>
 		<script src="js/calcular.js"></script>
 		<script src='js/calculoDados.js'></script>
+		<script src='js/player.js'></script>
 		 <script src="https://www.w3schools.com/lib/w3data.js"></script> 
 		<script>w3IncludeHTML();</script>
 	</body>
