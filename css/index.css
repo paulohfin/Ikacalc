@@ -50,64 +50,16 @@ body{
 .img4{
 	position: absolute;
 	left:50%;
-	top:803px;
+	top:603px;
 	width:603px;
 	margin-left:-303px;
 }
-.img51{
+.img5{
 	position: absolute;
 	left:50%;
 	top:323px;
 	width:577px;
-	margin-left:-291px;
-}
-.img52{
-	position: absolute;
-	left:50%;
-	top:383px;
-	width:577px;
-	margin-left:-291px;
-}
-.img53{
-	position: absolute;
-	left:50%;
-	top:443px;
-	width:577px;
-	margin-left:-291px;
-}
-.img54{
-	position: absolute;
-	left:50%;
-	top:503px;
-	width:577px;
-	margin-left:-291px;
-}
-.img55{
-	position: absolute;
-	left:50%;
-	top:563px;
-	width:577px;
-	margin-left:-291px;
-}
-.img56{
-	position: absolute;
-	left:50%;
-	top:623px;
-	width:577px;
-	margin-left:-291px;
-}
-.img57{
-	position: absolute;
-	left:50%;
-	top:683px;
-	width:577px;
-	margin-left:-291px;
-}
-.img58{
-	position: absolute;
-	left:50%;
-	top:743px;
-	width:577px;
+	height:290px;
 	margin-left:-291px;
 }
 .img6{
@@ -122,12 +74,16 @@ body{
 	left:50%;
 	top:330px;
 	width:500px;
+	height:250px;
 	margin-left:-250px;
 }
-.img8{
+.img8a{
 	position: absolute;
-	left:50%;
+	left:0px;
 	top:850px;
-	width:1200px;
-	margin-left:-600px;
+}
+.img8b{
+	position: absolute;
+	right:0px;
+	top:850px;
 }

@@ -1,4 +1,4 @@
-#pesquisa{
+#governo{
 	display:none;
 	position:absolute;
 	left:50%;
@@ -15,13 +15,13 @@
 	height:520px;
 	margin-left:-323px;
 }
-#fecharp{
+#fecharg{
 	position:absolute;
 	top:-70px;
 	right:50%;
 	margin-right:-320px;
 }
-#salvarp{
+#salvarg{
 	position:absolute;
 	top:-70px;
 	left:50%;
