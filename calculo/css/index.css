@@ -1,0 +1,66 @@
+body{
+	color: #333333;
+	background-color: #FFDEAD;
+}
+.menu-opcoes ul {
+	font-size: 20px;
+}
+.menu-opcoes ul li {
+	display: inline;
+	margin-left: 20px;
+}
+.menu-opcoes {
+	position:absolute;
+	top:150px;
+	left: 50%;
+	margin-left:-380px;	
+	
+}
+.container {
+	position:absolute;
+	left:50%;
+	top:380px;
+	width: 1200px;
+	margin-left:-600px;	
+}
+.container img{
+	max-width:50px;
+	width: auto;
+	height: auto;
+}
+.img01{
+	position: absolute;
+	left:50%;
+	top:20px;
+	width:600px;
+	margin-left:-300px;
+}
+.img3{
+	position: absolute;
+	left:50%;
+	top:250px;
+	width:1000px;
+	margin-left:-500px;
+}
+.img4{
+	position: absolute;
+	left:50%;
+	top:1325px;
+	width:1005px;
+	margin-left:-505px;
+}
+.img5{
+	position: absolute;
+	left:50%;
+	top:379px;
+	width:963px;
+	height:950px;
+	margin-left:-485.1px;
+}
+.table{
+	position: absolute;
+	left:50%;
+	width:800px;
+	margin-left:-400px;
+	
+}
