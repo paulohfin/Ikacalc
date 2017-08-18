@@ -2,33 +2,12 @@ body{
 	color: #333333;
 	background-color: #FFDEAD;
 }
-.menu-opcoes ul {
-	font-size: 20px;
-}
-.menu-opcoes ul li {
-	display: inline;
-	margin-left: 20px;
-}
-.menu-opcoes {
-	position:absolute;
-	top:150px;
-	left: 50%;
-	margin-left:-380px;	
-	
-}
 .container {
 	position:absolute;
 	left:50%;
 	top:350px;
 	width: 400px;
 	margin-left:-200px;	
-}
-.img01{
-	position: absolute;
-	left:50%;
-	top:20px;
-	width:600px;
-	margin-left:-300px;
 }
 .img1{
 	position: absolute;

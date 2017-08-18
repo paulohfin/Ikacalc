@@ -1,9 +1,5 @@
 <?php
 	require_once('../configuracao.php');
-	require_once('funcoes.php');
-	if(isset($_POST['calcular'])){
-		calcular();
-	}
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,6 +7,7 @@
 		<title>IkaCalc - O site para auxiliar as estratégias de guerras/construções no Ikariam</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="css/index.css">
+		<link rel="stylesheet" href=<?php echo BASEURL . "inc/cabecalho.css"?>>
 	</head>
 	<body>
 		<?php require_once('../inc/cabecalho.php'); ?>
@@ -19,81 +16,13 @@
 		<img class='img5' src='../img/f5.png'>
 		<div class="container">
 			<div class='table'>
-			<form method='POST'>
 			<table cellpadding="2">
-				<tr>
-					<th colspan=12 bgcolor="#D2B48C">Unidades</th>
-				</tr>
-				<tr>
-					<th colspan=6>Tropa</th>
-					<th colspan=6>Frota</th>
-				</tr>
-				<tr>
-					<td><img src='../img/un/301.png'></td>
-					<td><input type='text' size=1 name='ct1'></td>
-					<td><img src='../img/un/313.png'></td>
-					<td><input type='text' size=1 name='ct2'></td>
-					<td><img src='../img/un/304.png'></td>
-					<td><input type='text' size=1 name='ct3'></td>
-					<td><img src='../img/un/210.png'></td>
-					<td><input type='text' size=1 name='ct15'></td>
-					<td><img src='../img/un/213.png'></td>
-					<td><input type='text' size=1 name='ct16'></td>
-					<td><img src='../img/un/211.png'></td>
-					<td><input type='text' size=1 name='ct17'></td>
-				</tr>
-				<tr>
-					<td><img src='../img/un/315.png'></td>
-					<td><input type='text' size=1 name='ct4'></td>
-					<td><img src='../img/un/302.png'></td>
-					<td><input type='text' size=1 name='ct5'></td>
-					<td><img src='../img/un/303.png'></td>
-					<td><input type='text' size=1 name='ct6'></td>
-					<td><img src='../img/un/214.png'></td>
-					<td><input type='text' size=1 name='ct18'></td>
-					<td><img src='../img/un/215.png'></td>
-					<td><input type='text' size=1 name='ct19'></td>
-					<td><img src='../img/un/216.png'></td>
-					<td><input type='text' size=1 name='ct20'></td>
-				</tr>
-				<tr>
-					<td><img src='../img/un/308.png'></td>
-					<td><input type='text' size=1 name='ct7'></td>
-					<td><img src='../img/un/312.png'></td>
-					<td><input type='text' size=1 name='ct8'></td>
-					<td><img src='../img/un/309.png'></td>
-					<td><input type='text' size=1 name='ct9'></td>
-					<td><img src='../img/un/217.png'></td>
-					<td><input type='text' size=1 name='ct21'></td>
-					<td><img src='../img/un/212.png'></td>
-					<td><input type='text' size=1 name='ct22'></td>
-					<td><img src='../img/un/218.png'></td>
-					<td><input type='text' size=1 name='ct23'></td>
-				</tr>
-				<tr>
-					<td><img src='../img/un/307.png'></td>
-					<td><input type='text' size=1 name='ct10'></td>
-					<td><img src='../img/un/306.png'></td>
-					<td><input type='text' size=1 name='ct11'></td>
-					<td><img src='../img/un/305.png'></td>
-					<td><input type='text' size=1 name='ct12'></td>
-					<td><img src='../img/un/219.png'></td>
-					<td><input type='text' size=1 name='ct24'></td>
-					<td><img src='../img/un/220.png'></td>
-					<td><input type='text' size=1 name='ct25'></td>
-				</tr>
-				<tr>
-					<td><img src='../img/un/311.png'></td>
-					<td><input type='text' size=1 name='ct13'></td>
-					<td><img src='../img/un/310.png'></td>
-					<td><input type='text' size=1 name='ct14'></td>
-				</tr>
-				<tr>
+				<tr title="Selecione o tipo de governo">
 					<th colspan=12 bgcolor="#D2B48C">Governo</th>
 				</tr>
-				<tr>
+				<tr title="Selecione o tipo de governo">
 					<th colspan=6>Tipo de Governo</th><td colspan=6>
-						<select name='governo'>
+						<select id='governo' onblur="calcular()">
 							<option value=0>Selecione um tipo de Governo</option>
 							<option value=1>Ikacracia</option>
 							<option value=2>Aristocracia</option>
@@ -106,12 +35,12 @@
 						</select>
 					</td>
 				</tr>
-				<tr>
+				<tr title="Selecione as pesquisas">
 					<th colspan=12 bgcolor="#D2B48C">Pesquisas</th>
 				</tr>
-				<tr>
+				<tr title="Selecione as pesquisas">
 				<td colspan=6>
-					<select name='navegacao'>
+					<select id='navegacao' onblur="calcular()">
 						<option value=0>Pesquisa de Navegação Marítma</option>
 						<option value=1>Carpintaria</option>
 						<option value=2> Convés de Armas</option>
@@ -159,7 +88,7 @@
 					</select>
 				</td>
 				<td colspan=6>
-					<select name='militar'>
+					<select id='militar' onblur="calcular()">
 						<option value=0>Pesquisa Militar</option>
 						<option value=1>Doca</option>
 						<option value=2>Mapas</option>
@@ -202,26 +131,26 @@
 					</select>
 				</td>
 			</tr>
-				<tr>
+				<tr title="Selecione o level dos edifícios na cidade de produção">
 					<th colspan=12 bgcolor="#D2B48C">Edifício Minimizadores</th>
 				</tr>
-			<tr>
+			<tr title="Selecione o level dos edifícios na cidade de produção">
 				<td><img src='../img/ed/carpentering_l.png'></td>
-				<td><input type='text' size=1 name='d1'></td>
+				<td><input type='text' size=1 id='d1' onblur="calcular()"></td>
 				<td><img src='../img/ed/vineyard_l.png'></td>
-				<td><input type='text' size=1 name='d2'></td>
+				<td><input type='text' size=1 id='d2' onblur="calcular()"></td>
 				<td><img src='../img/ed/architect_l.png'></td>
-				<td><input type='text' size=1 name='d3'></td>
+				<td><input type='text' size=1 id='d3' onblur="calcular()"></td>
 				<td><img src='../img/ed/optician_l.png'></td>
-				<td><input type='text' size=1 name='d4'></td>
+				<td><input type='text' size=1 id='d4' onblur="calcular()"></td>
 				<td><img src='../img/ed/fireworker_l.png'></td>
-				<td><input type='text' size=1 name='d5'></td>
+				<td><input type='text' size=1 id='d5' onblur="calcular()"></td>
 				<td></td>
 			</tr>
-				<tr>
+				<tr title="Selecione o level dos edifícios de produção">
 					<th colspan=12 bgcolor="#D2B48C">Edifício para Construção</th>
 				</tr>
-			<tr>
+			<tr title="Selecione o level dos edifícios de produção">
 				<td colspan=2>Edifício</td>
 				<td colspan=2>Level</td>
 				<td colspan=2>Quantidade</td>
@@ -229,41 +158,114 @@
 				<td colspan=2>Level</td>
 				<td colspan=2>Quantidade</td>
 			</tr>
-			<tr>
+			<tr title="Selecione o level dos edifícios de produção">
 				<td colspan=2><img src='../img/ed/barracks_r.png'></td>
-				<td colspan=2><input type='text' size=1 name='dq'></td>
-				<td colspan=2><input type='text' size=1 name='nq'></td>
+				<td colspan=2><input type='text' size=1 id='dq' onblur="calcular()"></td>
+				<td colspan=2><input type='text' size=1 id='nq' onblur="calcular()"></td>
 				<td colspan=2><img src='../img/ed/shipyard_r.png'></td>
-				<td colspan=2><input type='text' size=1 name='de'></td>
-				<td colspan=2><input type='text' size=1 name='ne'></td>
+				<td colspan=2><input type='text' size=1 id='de' onblur="calcular()"></td>
+				<td colspan=2><input type='text' size=1 id='ne' onblur="calcular()"></td>
+			</tr>
+				<tr title="Insira a quantidade de unidades a serem produzidas">
+					<th colspan=12 bgcolor="#D2B48C">Unidades</th>
+				</tr>
+				<tr title="Insira a quantidade de unidades a serem produzidas">
+					<th colspan=6>Tropa</th>
+					<th colspan=6>Frota</th>
+				</tr>
+				<tr title="Insira a quantidade de unidades a serem produzidas">
+					<td><img src='../img/un/301.png'></td>
+					<td><input type='text' size=1 id='ct1' onblur="calcular()"></td>
+					<td><img src='../img/un/313.png'></td>
+					<td><input type='text' size=1 id='ct2' onblur="calcular()"></td>
+					<td><img src='../img/un/304.png'></td>
+					<td><input type='text' size=1 id='ct3' onblur="calcular()"></td>
+					<td><img src='../img/un/210.png'></td>
+					<td><input type='text' size=1 id='ct15' onblur="calcular()"></td>
+					<td><img src='../img/un/213.png'></td>
+					<td><input type='text' size=1 id='ct16' onblur="calcular()"></td>
+					<td><img src='../img/un/211.png'></td>
+					<td><input type='text' size=1 id='ct17' onblur="calcular()"></td>
+				</tr>
+				<tr title="Insira a quantidade de unidades a serem produzidas">
+					<td><img src='../img/un/315.png'></td>
+					<td><input type='text' size=1 id='ct4' onblur="calcular()"></td>
+					<td><img src='../img/un/302.png'></td>
+					<td><input type='text' size=1 id='ct5' onblur="calcular()"></td>
+					<td><img src='../img/un/303.png'></td>
+					<td><input type='text' size=1 id='ct6' onblur="calcular()"></td>
+					<td><img src='../img/un/214.png'></td>
+					<td><input type='text' size=1 id='ct18' onblur="calcular()"></td>
+					<td><img src='../img/un/215.png'></td>
+					<td><input type='text' size=1 id='ct19' onblur="calcular()"></td>
+					<td><img src='../img/un/216.png'></td>
+					<td><input type='text' size=1 id='ct20' onblur="calcular()"></td>
+				</tr>
+				<tr title="Insira a quantidade de unidades a serem produzidas">
+					<td><img src='../img/un/308.png'></td>
+					<td><input type='text' size=1 id='ct7' onblur="calcular()"></td>
+					<td><img src='../img/un/312.png'></td>
+					<td><input type='text' size=1 id='ct8' onblur="calcular()"></td>
+					<td><img src='../img/un/309.png'></td>
+					<td><input type='text' size=1 id='ct9' onblur="calcular()"></td>
+					<td><img src='../img/un/217.png'></td>
+					<td><input type='text' size=1 id='ct21' onblur="calcular()"></td>
+					<td><img src='../img/un/212.png'></td>
+					<td><input type='text' size=1 id='ct22' onblur="calcular()"></td>
+					<td><img src='../img/un/218.png'></td>
+					<td><input type='text' size=1 id='ct23' onblur="calcular()"></td>
+				</tr>
+				<tr title="Insira a quantidade de unidades a serem produzidas">
+					<td><img src='../img/un/307.png'></td>
+					<td><input type='text' size=1 id='ct10' onblur="calcular()"></td>
+					<td><img src='../img/un/306.png'></td>
+					<td><input type='text' size=1 id='ct11' onblur="calcular()"></td>
+					<td><img src='../img/un/305.png'></td>
+					<td><input type='text' size=1 id='ct12' onblur="calcular()"></td>
+					<td><img src='../img/un/219.png'></td>
+					<td><input type='text' size=1 id='ct24' onblur="calcular()"></td>
+					<td><img src='../img/un/220.png'></td>
+					<td><input type='text' size=1 id='ct25' onblur="calcular()"></td>
+				</tr>
+				<tr title="Insira a quantidade de unidades a serem produzidas">
+					<td><img src='../img/un/311.png'></td>
+					<td><input type='text' size=1 id='ct13' onblur="calcular()"></td>
+					<td><img src='../img/un/310.png'></td>
+					<td><input type='text' size=1 id='ct14' onblur="calcular()"></td>
+				</tr>
+			<tr>
+				<td colspan=2 title="Consumo de Materiais de Construção"><img src='../img/icon_wood.png'></td>
+				<td colspan=4 title="Consumo de Materiais de Construção"><text id='rec0'></text></td>
+				<td colspan=2 title="Consumo de Ouro"><img src='../img/icon_gold.jpg'></td>
+				<td colspan=4 title="Consumo de Ouro"><text id='rec5'></text></td>
 			</tr>
 			<tr>
-				<th colspan=12><input type='submit' name='calcular' value='Calcular'></th>
-			</tr>
-			</form>
-			<tr>
-				<td colspan=2><img src='../img/icon_wood.png'></td><td colspan=4><?php echo $rec[1]; ?></td>
-				<td colspan=2><img src='../img/icon_gold.jpg'></td><td colspan=4><?php echo $rec[6]; ?></td>
+				<td colspan=2 title="Consumo de Vinho"><img src='../img/icon_wine.png'></td>
+				<td colspan=4 title="Consumo de Vinho"><text id='rec1'></text></td>
+				<td colspan=2 title="Cidadãos para produção"><img src='../img/icon_population.png'></td>
+				<td colspan=4 title="Cidadãos para produção"><text id='rec6'></text></td>
 			</tr>
 			<tr>
-				<td colspan=2><img src='../img/icon_wine.png'></td><td colspan=4><?php echo $rec[2]; ?></td>
-				<td colspan=2><img src='../img/icon_population.png'></td><td colspan=4><?php echo $rec[7]; ?></td>
+				<td colspan=2 title="Consumo de Mármore"><img src='../img/icon_marble.png'></td>
+				<td colspan=4 title="Consumo de Mármore"><text id='rec2'></text></td>
+				<td colspan=2 title="Tempo para produção de tropa">Tempo Tropa:</td>
+				<td colspan=4 title="Tempo para produção de tropa"><text id='rec7'></text></td>
 			</tr>
 			<tr>
-				<td colspan=2><img src='../img/icon_marble.png'></td><td colspan=4><?php echo $rec[3]; ?></td>
-				<td colspan=2>Tempo Tropa:</td><td colspan=4><?php echo $rec[8]; ?></td>
+				<td colspan=2 title="Consumo de Cristal"><img src='../img/icon_glass.png'></td>
+				<td colspan=4 title="Consumo de Cristal"><text id='rec3'></text></td>
+				<td colspan=2 title="Tempo para produção de frota">Tempo Frota:</td>
+				<td colspan=4 title="Tempo para produção de frota"><text id='rec8'></text></td>
 			</tr>
 			<tr>
-				<td colspan=2><img src='../img/icon_glass.png'></td><td colspan=4><?php echo $rec[4]; ?></td>
-				<td colspan=2>Tempo Frota:</td><td colspan=4><?php echo $rec[9]; ?></td>
-			</tr>
-			<tr>
-				<td colspan=2><img src='../img/icon_sulfur.png'></td><td colspan=4><?php echo $rec[5]; ?></td>
-				<td colspan=2>Generais :</td><td colspan=4><?php echo $rec[10]; ?></td>
+				<td colspan=2 title="Consumo de Enxofre"><img src='../img/icon_sulfur.png'></td>
+				<td colspan=4 title="Consumo de Enxofre"><text id='rec4'></text></td>
+				<td colspan=2 title="Pontos de Generais">Generais :</td>
+				<td colspan=4 title="Pontos de Generais"><text id='rec9'></text></td>
 			</tr>
 			</table>
 			</div>
 		</div>
-		<script src="js/index.js"></script>
+		<script src="calculo.js"></script>
 	</body>
 </html>

@@ -7,6 +7,7 @@
 		<title>IkaCalc - O site para auxiliar as estratégias de guerras/construções no Ikariam</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="css/index.css">
+		<link rel="stylesheet" href=<?php echo BASEURL . "inc/cabecalho.css"?>>
 	</head>
 	<body>
 		<?php require_once('inc/cabecalho.php'); ?>

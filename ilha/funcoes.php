@@ -3,24 +3,30 @@
 	require_once DBAPI;
 	
 	$ilhas = null;
+	$mundis = null;
+	
+	function buscarmundis(){
+		global $mundis;
+		$mundis = buscarmundi();
+	}
 	
 	if(isset($_POST['buscar'])){
 		if($_POST['radio'] === 'recurso')
-			buscar_recurso();
+			buscar_recurso($_POST['selectmundo']);
 		elseif($_POST['radio'] === 'milagre')
-			buscar_santuario();
+			buscar_santuario($_POST['selectmundo']);
 		else{
 			global $ilhas;
-			$ilhas = find_ilhas($_POST['radio']);		
+			$ilhas = find_ilhas($_POST['radio'], $_POST['selectmundo']);		
 		}
 	}
-	function buscar_recurso(){
+	function buscar_recurso($mundi){
 		global $ilhas;
-		$ilhas = find_ilhas_recurso($_POST['recurso']);	
+		$ilhas = find_ilhas_recurso($_POST['recurso'], $mundi);	
 	}
-	function buscar_santuario(){
+	function buscar_santuario($mundi){
 		global $ilhas;
-		$ilhas = find_ilhas_santuario($_POST['milagre']);	
+		$ilhas = find_ilhas_santuario($_POST['milagre'], $mundi);	
 	}
 	function tiporecurso($tipo){
 		if($tipo === '1')
