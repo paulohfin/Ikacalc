@@ -2,13 +2,13 @@
 
 <?php
 	/* O nome do banco de dados*/
-	define('DB_NAME', 'ikacalc');
+	define('DB_NAME', 'db_name');
 
 	/* Usuário do banco de dados MySQL */
-	define('DB_USER', 'root');
+	define('DB_USER', 'db_user');
 
 	/* Senha do banco de dados MySQL */
-	define('DB_PASSWORD', 'rick123');
+	define('DB_PASSWORD', 'db_password');
 
 	/* Nome do host do MySQL */
 	define('DB_HOST', 'localhost');
